@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+html,body {
+  background-color: #121212;
+  color: white;
+  
+}
+
+.App{
+
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    "gridProductTitle gridProductTitle"
+    "gridSectionLeft gridSectionRight"
+    "Footer Footer"
+    ;
+
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 5rem 33rem 2rem;
+padding-top: 3rem;
+padding-left: 1%;
+padding-right: 1%;
+gap: 1rem;
+}
+
+.grid1 {  grid-area: gridProductTitle;}
+.grid2 { grid-area: gridSectionLeft; }
+.grid3 { grid-area: gridSectionRight; }
+.grid4 { grid-area: Footer;}
+
+/*Media queries*/
+
+/* Stack on small screens */
+@media (max-width: 768px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+
+  }
+
+
+ .grid1, .grid4 {
+ width: 100%;
+margin-top: 3rem;
+}
+
+.grid2, .grid3{
+  width: 100%;
+  height: 30rem;
+  background-color: aquamarine;
+}
+
+.grid1{
+  height: 5rem;
+}
+.grid4{
+  height: 5rem;
+  margin-top: 0.5rem;
+}
+}
+
+
+
+
+

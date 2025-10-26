@@ -1,0 +1,27 @@
+.container {
+font-family: tahoma, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  background-color: #9297b1;
+  color: aqua;
+margin: 0px;
+padding: 0px;
+display: flex;
+align-items: center;
+height: 2.5em;
+width: 100%;
+position: fixed;
+}
+
+
+/* Mobile layout */
+@media screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar a {
+    margin: 5px 0;
+  }
+}

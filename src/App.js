@@ -1,0 +1,27 @@
+import logo from './logo.svg';
+import './App.css';
+import NavigationBar from './Components/1NavigationBar/1NavigationBar.jsx';
+import Title from './Components/2Title/Title.jsx';
+import PhotoSlider from './Components/3PhotoSlider/PhotoSlider.jsx';
+
+import CheckOut from './Components/4CheckOut/CheckOut.jsx';
+import Footer from './Components/5Footer/Footer.jsx'
+function App() {
+  return (
+    <div className="App">
+      <nav>
+<NavigationBar/>
+      </nav>
+<section className='grid-container'>
+<Title className="grid1"/>
+<PhotoSlider className="grid2"/>
+<CheckOut className="grid3"/>
+<Footer className="grid4"/>
+</section>
+
+    </div>
+  );
+}
+
+export default App;
+
