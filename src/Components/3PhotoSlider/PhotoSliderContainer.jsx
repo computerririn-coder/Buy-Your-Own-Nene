@@ -1,11 +1,14 @@
-import styles from './PhotoSlider.module.css'
+import ImageSlider from './ImageSlider/ImageSlider';
+import styles from './PhotoSliderContainer.module.css';
+
+
 
 
 function PhotoSlider({className}) {
     return ( 
         <>
         <section className={`${styles.container} ${className}`}>
-PhotoSlider      
+<ImageSlider/>    
   </section>
         </>
     );

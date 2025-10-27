@@ -1,0 +1,41 @@
+.container{
+display: flex;
+flex-direction: column;
+
+align-items: center;
+  border-radius: 12px;
+width: 40rem;
+height: 25rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-family: Tahoma, sans-serif;
+  background-color: aquamarine;
+
+
+}
+
+.title {
+padding-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2d3436;
+}
+
+.options{
+     display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    padding-top: 2rem;
+}
+.radioRect {
+   
+  padding: 0.5rem 1rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: yellowgreen;
+}
+

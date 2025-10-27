@@ -3,12 +3,19 @@
   padding: 0;
 }
 
-
-html,body {
-  background-color: #121212;
-  color: white;
+html, body {
+    background-image: url('BackRoundImage.jpg');
+    background-size: cover;      /* makes the image cover the entire element */
+    background-position: center; /* centers the image */
+    background-repeat: no-repeat; /* prevents tiling */
+    width: 100%;                 /* ensures the element has width */
+    height: 100vh;               /* ensures the element fills the viewport height */
   
+  color: white;
+  height: 100%;
+  margin: 0;
 }
+
 
 .App{
 
@@ -23,11 +30,11 @@ html,body {
     ;
 
 grid-template-columns: 1fr 1fr;
-grid-template-rows: 5rem 33rem 2rem;
+grid-template-rows: 10rem 30.6rem 2rem;
 padding-top: 3rem;
-padding-left: 1%;
+
 padding-right: 1%;
-gap: 1rem;
+
 }
 
 .grid1 {  grid-area: gridProductTitle;}
@@ -43,8 +50,8 @@ gap: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
-
+    padding: 0rem;
+gap: 0.5rem;
   }
 
 
@@ -55,18 +62,20 @@ margin-top: 3rem;
 
 .grid2, .grid3{
   width: 100%;
-  height: 30rem;
-  background-color: aquamarine;
+  height: 25rem;
 }
 
 .grid1{
   height: 5rem;
 }
 .grid4{
-  height: 5rem;
+  height: 3rem;
   margin-top: 0.5rem;
+  
+  gap: 0rem;
 }
 }
+
 
 
 

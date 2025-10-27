@@ -2,10 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 import NavigationBar from './Components/1NavigationBar/1NavigationBar.jsx';
 import Title from './Components/2Title/Title.jsx';
-import PhotoSlider from './Components/3PhotoSlider/PhotoSlider.jsx';
+import PhotoSlider from './Components/3PhotoSlider/PhotoSliderContainer.jsx';
 
 import CheckOut from './Components/4CheckOut/CheckOut.jsx';
 import Footer from './Components/5Footer/Footer.jsx'
+//PlaceHolders
+import ImageSlider from './Components/3PhotoSlider/ImageSlider/ImageSlider.jsx';
+
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +22,8 @@ function App() {
 <CheckOut className="grid3"/>
 <Footer className="grid4"/>
 </section>
+{/*placeHolders */}
+
 
     </div>
   );
