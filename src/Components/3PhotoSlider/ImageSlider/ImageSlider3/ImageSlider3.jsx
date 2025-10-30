@@ -1,15 +1,17 @@
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import styles from './ImageSlider.module.css';
+import styles from './ImageSlider3.module.css';
 
 function ImageSlider() {
   const [count, setCount] = useState(1);
   const [fade, setFade] = useState(false);
 
   const images = [
-    '/ImageSliderImages/1.jpg',
-    '/ImageSliderImages/2.jpg',
-    '/ImageSliderImages/3.jpg'
+    '/ImageSliderImages/ImageSlider3Images/Slider3Image1.jpg',
+    '/ImageSliderImages/ImageSlider3Images/Slider3Image2.jpg',
+    '/ImageSliderImages/ImageSlider3Images/Slider3Image3.jpg',
+    
+    
   ];
 
   function changeImage(newCount) {
@@ -27,6 +29,15 @@ function ImageSlider() {
   function decrement() {
     changeImage(count === 1 ? images.length : count - 1);
   }
+
+  //Auto next image 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      increment();
+    }, 3000);
+  
+    return () => clearInterval(interval);
+  }, [count]);
 
   return (
     <section className={styles.container}>

@@ -1,4 +1,23 @@
 .container{
-    position: relative;
+display: flex;
+justify-content: center;
+align-items: flex-start;
 }
 
+.gridContainer {
+  display: grid;
+  grid-template-areas:
+    "slider1 slider2"
+    "slider3 slider3";
+grid-template-columns: 14rem 14rem;
+grid-template-rows: 14rem 14rem;
+gap: 2rem;
+margin-top: -1rem;
+
+
+
+}
+
+.slider1 { grid-area: slider1; }
+.slider2 { grid-area: slider2; }
+.slider3 { grid-area: slider3; }

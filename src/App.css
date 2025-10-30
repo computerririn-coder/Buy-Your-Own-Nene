@@ -7,7 +7,7 @@ html, body {
     background-image: url('BackRoundImage.jpg');
     background-size: cover;      /* makes the image cover the entire element */
     background-position: center; /* centers the image */
-    background-repeat: no-repeat; /* prevents tiling */
+    background-repeat: repeat; /* prevents tiling */
     width: 100%;                 /* ensures the element has width */
     height: 100vh;               /* ensures the element fills the viewport height */
   
@@ -45,36 +45,6 @@ padding-top: 3rem;
 /*Media queries*/
 
 /* Stack on small screens */
-@media (max-width: 768px) {
-  .grid-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0rem;
-gap: 1.5rem;
-  }
-
-
- .grid1, .grid4 {
- width: 100%;
-margin-top: 3rem;
-}
-
-.grid2, .grid3{
-  width: 100%;
-  height: 25rem;
-}
-
-.grid1{
-  height: 5rem;
-}
-.grid4{
-  height: 3rem;
-  margin-top: 0.5rem;
-  
-  gap: 0rem;
-}
-}
 
 
 

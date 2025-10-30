@@ -7,8 +7,8 @@ import PhotoSlider from './Components/3PhotoSlider/PhotoSliderContainer.jsx';
 import CheckOut from './Components/4CheckOut/CheckOut.jsx';
 import Footer from './Components/5Footer/Footer.jsx'
 //PlaceHolders
-import ImageSlider from './Components/3PhotoSlider/ImageSlider/ImageSlider.jsx';
-
+import ImageSlider from './Components/3PhotoSlider/ImageSlider/ImageSlider1/ImageSlider1.jsx';
+import PurchaseItem from './Components/6PurchaseItem/PurchaseItem.jsx';
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
 <CheckOut className="grid3"/>
 <Footer className="grid4"/>
 </section>
+<PurchaseItem/>
 {/*placeHolders */}
 
 
