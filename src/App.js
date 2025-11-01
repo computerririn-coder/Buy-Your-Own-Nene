@@ -9,8 +9,13 @@ import Footer from './Components/5Footer/Footer.jsx'
 //PlaceHolders
 import ImageSlider from './Components/3PhotoSlider/ImageSlider/ImageSlider1/ImageSlider1.jsx';
 import PurchaseItem from './Components/6PurchaseItem/PurchaseItem.jsx';
+import { useState } from 'react';
 
 function App() {
+  const [liftedChoice, liftedSetChoice] = useState('');
+  const [liftedChoiceCuteness, liftedSetChoiceCuteness] = useState('');
+  const [showPurchaseItemComponent, setShowPurchaseItemComponent] = useState(false);
+
   return (
     <div className="App">
       <nav>
@@ -19,10 +24,17 @@ function App() {
 <section className='grid-container'>
 <Title className="grid1"/>
 <PhotoSlider className="grid2"/>
-<CheckOut className="grid3"/>
+<CheckOut className="grid3" liftedSetChoice={liftedSetChoice} liftedSetChoiceCuteness={liftedSetChoiceCuteness} showPurchaseItemComponent={showPurchaseItemComponent} setShowPurchaseItemComponent={setShowPurchaseItemComponent}/>
 <Footer className="grid4"/>
+{showPurchaseItemComponent && (
+  <PurchaseItem
+    liftedChoice={liftedChoice}
+    liftedChoiceCuteness={liftedChoiceCuteness}
+  />
+)}
+
 </section>
-<PurchaseItem/>
+
 {/*placeHolders */}
 
 

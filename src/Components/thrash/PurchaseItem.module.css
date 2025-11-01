@@ -1,4 +1,4 @@
-.container {
+.purchaseContainer {
   width: 22rem;
   padding: 1.5rem;
   background-color: #f0fff0;
@@ -9,9 +9,6 @@
   gap: 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border: 2px solid yellowgreen;
-  margin-top: 10rem;
-  position: absolute;
-left: 35%;
 }
 
 .title {
@@ -36,15 +33,6 @@ left: 35%;
   font-size: 1rem;
 }
 
-.imagePlaceholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 0rem -6.3rem;
-  border-radius: 10px;
-}
-
-
 .itemName,
 .itemVariation,
 .itemPrice {
@@ -64,20 +52,7 @@ left: 35%;
   justify-content: center;
 }
 
-.backBtn{
-
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  background-color: #ccc;
-  color: #333;
-}
-
+/* pseudo classes */
 .cancelBtn {
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
@@ -87,7 +62,7 @@ left: 35%;
   font-weight: 600;
   transition: all 0.2s ease;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  background-color: red;
+  background-color: #ccc;
   color: #333;
 }
 

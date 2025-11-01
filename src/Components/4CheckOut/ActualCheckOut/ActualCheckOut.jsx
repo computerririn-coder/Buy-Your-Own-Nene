@@ -1,17 +1,17 @@
-import { useState } from 'react';
+import { use, useState } from 'react';
 import styles from './ActualCheckOut.module.css';
+function ActualCheckOut({ liftedSetChoice, liftedSetChoiceCuteness, showPurchaseItemComponent, setShowPurchaseItemComponent}) {
+  const [choice, setChoice] = useState('');
+  const [choiceCuteness, setChoiceCuteness] = useState('');
 
-function ActualCheckOut({ choiceQuality, choiceCuteness }) {
-  // fix: use different state names to avoid shadowing props
-  const [selectedQuality, setSelectedQuality] = useState(choiceQuality || '');
-  const [selectedCuteness, setSelectedCuteness] = useState(choiceCuteness || '');
+function handleSubmit(e) {
+  e.preventDefault();
+  liftedSetChoice(choice);
+  liftedSetChoiceCuteness(choiceCuteness);
+  setShowPurchaseItemComponent(true);
+}
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Selected Quality:', selectedQuality);
-    console.log('Selected Cuteness Level:', selectedCuteness);
-  };
-
+  
   return (
     <section className={styles.container}>
       <h1 className={styles.title}>Which is best for you?</h1>
@@ -24,102 +24,168 @@ function ActualCheckOut({ choiceQuality, choiceCuteness }) {
       <div className={styles.formContainer}>
         {/* Option Group 1 */}
         <form className={styles.options1}>
-          <label className={`${styles.radioRect} ${selectedQuality === 'SubStandard' ? styles.checked : ''}`}>
-            {selectedQuality === 'SubStandard' && <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />}
+          <label
+            className={`${styles.radioRect} ${
+              choice === 'SubStandard' ? styles.checked : ''
+            }`}
+          >
+            {choice === 'SubStandard' && (
+              <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
+            )}
+
             <span className={styles.leftText}>
               <h3>Substandard</h3>
               <h6>Cheap But Quality</h6>
             </span>
-            <span className={styles.rightText}><h6>From ₱79,990</h6></span>
+
+            <span className={styles.rightText}>
+              <h6>From ₱79,990</h6>
+            </span>
+
             <input
               type="radio"
-              name="choiceQuality"
+              name="choice"
               value="SubStandard"
-              checked={selectedQuality === 'SubStandard'}
-              onChange={(e) => setSelectedQuality(e.target.value)}
+              checked={choice === 'SubStandard'}
+              onChange={(e) => setChoice(e.target.value)}
             />
           </label>
 
-          <label className={`${styles.radioRect} ${selectedQuality === 'Standard' ? styles.checked : ''}`}>
-            {selectedQuality === 'Standard' && <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />}
+          <label
+            className={`${styles.radioRect} ${
+              choice === 'Standard' ? styles.checked : ''
+            }`}
+          >
+            {choice === 'Standard' && (
+              <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
+            )}
+
             <span className={styles.leftText}>
               <h3>Standard</h3>
               <h6>Balanced Option</h6>
             </span>
-            <span className={styles.rightText}><h6>From ₱99,990</h6></span>
+
+            <span className={styles.rightText}>
+              <h6>From ₱99,990</h6>
+            </span>
+
             <input
               type="radio"
-              name="choiceQuality"
+              name="choice"
               value="Standard"
-              checked={selectedQuality === 'Standard'}
-              onChange={(e) => setSelectedQuality(e.target.value)}
+              checked={choice === 'Standard'}
+              onChange={(e) => setChoice(e.target.value)}
             />
           </label>
 
-          <label className={`${styles.radioRect} ${selectedQuality === 'Premium' ? styles.checked : ''}`}>
-            {selectedQuality === 'Premium' && <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />}
+          <label
+            className={`${styles.radioRect} ${
+              choice === 'Premium' ? styles.checked : ''
+            }`}
+          >
+            {choice === 'Premium' && (
+              <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
+            )}
+
             <span className={styles.leftText}>
               <h3>Premium</h3>
               <h6>Top Quality</h6>
             </span>
-            <span className={styles.rightText}><h6>From ₱149,990</h6></span>
+
+            <span className={styles.rightText}>
+              <h6>From ₱149,990</h6>
+            </span>
+
             <input
               type="radio"
-              name="choiceQuality"
+              name="choice"
               value="Premium"
-              checked={selectedQuality === 'Premium'}
-              onChange={(e) => setSelectedQuality(e.target.value)}
+              checked={choice === 'Premium'}
+              onChange={(e) => setChoice(e.target.value)}
             />
           </label>
         </form>
 
         {/* Option Group 2 */}
         <form className={styles.options2}>
-          <label className={`${styles.radioRect} ${selectedCuteness === '50' ? styles.checked : ''}`}>
-            {selectedCuteness === '50' && <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />}
+          <label
+            className={`${styles.radioRect} ${
+              choiceCuteness === '50' ? styles.checked : ''
+            }`}
+          >
+            {choiceCuteness === '50' && (
+              <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
+            )}
+
             <span className={styles.leftText}>
               <h3>50% Cute</h3>
               <h6>Placeholder</h6>
             </span>
-            <span className={styles.rightText}><h6>Additional ₱1,000</h6></span>
+
+            <span className={styles.rightText}>
+              <h6>Additional ₱1,000</h6>
+            </span>
+
             <input
               type="radio"
               name="optionCuteness"
               value="50"
-              checked={selectedCuteness === '50'}
-              onChange={(e) => setSelectedCuteness(e.target.value)}
+              checked={choiceCuteness === '50'}
+              onChange={(e) => setChoiceCuteness(e.target.value)}
             />
           </label>
 
-          <label className={`${styles.radioRect} ${selectedCuteness === '75' ? styles.checked : ''}`}>
-            {selectedCuteness === '75' && <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />}
+          <label
+            className={`${styles.radioRect} ${
+              choiceCuteness === '75' ? styles.checked : ''
+            }`}
+          >
+            {choiceCuteness === '75' && (
+              <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
+            )}
+
             <span className={styles.leftText}>
               <h3>75% Cute</h3>
               <h6>Placeholder</h6>
             </span>
-            <span className={styles.rightText}><h6>Additional ₱2,000</h6></span>
+
+            <span className={styles.rightText}>
+              <h6>Additional ₱2,000</h6>
+            </span>
+
             <input
               type="radio"
               name="optionCuteness"
               value="75"
-              checked={selectedCuteness === '75'}
-              onChange={(e) => setSelectedCuteness(e.target.value)}
+              checked={choiceCuteness === '75'}
+              onChange={(e) => setChoiceCuteness(e.target.value)}
             />
           </label>
 
-          <label className={`${styles.radioRect} ${selectedCuteness === '100' ? styles.checked : ''}`}>
-            {selectedCuteness === '100' && <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />}
+          <label
+            className={`${styles.radioRect} ${
+              choiceCuteness === '100' ? styles.checked : ''
+            }`}
+          >
+            {choiceCuteness === '100' && (
+              <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
+            )}
+
             <span className={styles.leftText}>
               <h3>100% Cute</h3>
               <h6>Placeholder</h6>
             </span>
-            <span className={styles.rightText}><h6>Additional ₱3,000</h6></span>
+
+            <span className={styles.rightText}>
+              <h6>Additional ₱3,000</h6>
+            </span>
+
             <input
               type="radio"
               name="optionCuteness"
               value="100"
-              checked={selectedCuteness === '100'}
-              onChange={(e) => setSelectedCuteness(e.target.value)}
+              checked={choiceCuteness === '100'}
+              onChange={(e) => setChoiceCuteness(e.target.value)}
             />
           </label>
         </form>

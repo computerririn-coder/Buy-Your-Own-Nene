@@ -1,0 +1,29 @@
+[33mcommit 7fe6a260f56925e461ac5f664bef3a23e9e40570[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Your Name <your@email.com>
+Date:   Thu Oct 30 14:06:37 2025 +0800
+
+    Added checkout components and component that appears if purchase button is click is slighyl done
+
+[33mcommit 917add9d07be97fa522580e44af3bdae44ea9d33[m
+Author: Your Name <your@email.com>
+Date:   Wed Oct 29 21:55:09 2025 +0800
+
+    Added components in checkout component(i added options to be able to choose product variation like a shopping thing)
+
+[33mcommit d11291d5540f6815d466cb1d21c1c4e55ceb496c[m
+Author: Your Name <your@email.com>
+Date:   Mon Oct 27 20:40:26 2025 +0800
+
+    I did the checkout section about 40% finished and also did small updates on many components
+
+[33mcommit 3166570cb5b6f99a28aedf55fab3d50f316a5d68[m
+Author: Your Name <your@email.com>
+Date:   Mon Oct 27 17:03:32 2025 +0800
+
+    40% Finished
+
+[33mcommit 04239956a01634bd5cf4e2624e3456ff1e3a3ef2[m
+Author: Your Name <your@email.com>
+Date:   Sun Oct 26 18:41:42 2025 +0800
+
+    Initial Commit,I did the layout first and made it resposive before i put something to the placeholder boxes
