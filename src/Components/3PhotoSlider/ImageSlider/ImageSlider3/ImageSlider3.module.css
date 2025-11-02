@@ -2,7 +2,7 @@
   position: relative;
   background-color: #ff8b94;
 width: 20rem;
-margin-left: 5rem;
+margin-left: 4rem;
   max-width: clamp(20rem, 40vw, 30rem);
   max-height: clamp(10rem, 20vw, 14rem);
 }

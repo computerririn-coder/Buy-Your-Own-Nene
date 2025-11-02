@@ -2,20 +2,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40rem;
-  
-  height: 27rem;
+  width: 60%;
+  height: 105%;
   border-radius: 12px;
   background-color: aquamarine;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   font-family: Tahoma, sans-serif;
   background-color: darkturquoise;
-
+  transform: scale(1.1);
 }
 
 .title {
   padding-top: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.25em;
   font-weight: bold;
   color: #f9f9f9;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
@@ -25,7 +24,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 15rem;
+  gap: 10rem;
   padding-bottom: 1rem;
 }
 
@@ -40,6 +39,7 @@ color: violet;
 .formContainer {
   display: flex;
   flex-direction: row;
+  
 }
 
 .options1,
@@ -48,21 +48,21 @@ color: violet;
   flex-direction: column;
 gap: 3rem;
 padding-left: 1rem;
-padding-right: 1rem;
+padding-right: 0rem;
+
 }
 
 .radioRect {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15rem;
-  height: 4.5rem;
+  width: 90%;
+  height: 90%;
   border: 1px solid pink;
   border-radius: 10px;
   background-color: yellowgreen;
   cursor: pointer;
   position: relative;
-  
 }
 
 .radioRect input {
@@ -80,7 +80,7 @@ padding-right: 1rem;
   flex-direction: column;
   justify-content: flex-start;
   margin-bottom: auto;
-  padding: 0.5rem;
+  padding: 0.8rem;
 }
 
 .rightText {
@@ -92,10 +92,7 @@ padding-right: 1rem;
 }
 
 .mySubmit {
-  align-self: flex-end;
-  margin-top: auto;
-margin-bottom: 0.2rem;
-margin-right: 0.2rem;
+margin-top: 0.5rem;
 
 }
 
@@ -103,7 +100,7 @@ margin-right: 0.2rem;
   background-color: white;
   color: #2d3436;
   font-weight: 600;
-  font-size: 1rem;
+
   padding: 0.2rem;
   border: 2px solid #2d3436;
   border-radius: 12px;
@@ -134,9 +131,9 @@ margin-right: 0.2rem;
   transform: rotate(25deg);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 .container{
-  transform: scale(0.9);
+  transform: scale(1);
 }
 
  .mySubmit{

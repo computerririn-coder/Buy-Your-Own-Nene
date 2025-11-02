@@ -31,9 +31,9 @@
 .logoImg {
   height: 2.5rem; /* adjust as needed */
   width: auto;  /* maintain aspect ratio */
-display: flex;
-justify-content: center;
-align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nonLogoItems {
@@ -49,6 +49,12 @@ align-items: center;
 }
 
 .container a:hover {
-  color: #1eff00;
-     transform: scale(1.2);
+ color: #1eff00;
+ transform: scale(1.2);
+}
+
+@media (max-width: 700px) {
+.nonLogoItems{
+  gap: 1.5rem;
+ }
 }

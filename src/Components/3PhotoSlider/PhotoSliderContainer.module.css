@@ -1,9 +1,9 @@
 .container {
-  display: flex;
-  justify-content: center;     /* center the grid horizontally */
-  align-items: center;         /* optional: vertical centering */
+
+    
   width: 100%;
-  
+  transform: scale(1.4);
+
 }
 
 .gridContainer {
@@ -16,10 +16,11 @@
   gap: 2rem;
   margin-top: -1rem;
 
-  justify-content: center;     /* ✅ keeps grid centered inside flex */
-  justify-items: center;       /* ✅ centers each grid item inside its cell */
-  margin-left: auto;           /* ✅ centers when width shrinks */
+  justify-content: center;     
+  justify-items: center;       
+  margin-left: auto;           
   margin-right: auto;
+  margin-top: 5rem;
 }
 
 .slider1 { grid-area: slider1; }
@@ -28,4 +29,13 @@
 
 .thirdImageSlider{
 margin-left: 13rem;
+}
+
+@media (max-width: 768px) {
+.container{
+  transform: scale(1);
+}
+.gridContainer{
+margin-top: -4rem;
+}
 }

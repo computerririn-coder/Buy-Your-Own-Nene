@@ -14,7 +14,7 @@ function NavigationBar({ className }) {
        <div className={styles.nonLogoItems}>
             <a href="#">Portfolio Site</a>
             <a href="#">ReadMe</a>
-            <a href="#">Github</a>
+            <a href="https://github.com/computerririn-coder/Buy-Your-Own-Nene">Github_Project_Link</a>
             <a href="#">Contact</a>
        </div>
 
