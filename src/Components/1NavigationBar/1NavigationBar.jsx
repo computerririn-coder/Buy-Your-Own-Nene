@@ -12,6 +12,7 @@ function NavigationBar({ className }) {
 </div>
 
        <div className={styles.nonLogoItems}>
+            <a href="#">Portfolio Site</a>
             <a href="#">ReadMe</a>
             <a href="#">Github</a>
             <a href="#">Contact</a>

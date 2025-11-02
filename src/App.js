@@ -13,7 +13,7 @@ import { useState } from 'react';
 
 function App() {
   const [liftedChoice, liftedSetChoice] = useState('');
-  const [liftedChoiceCuteness, liftedSetChoiceCuteness] = useState('');
+  const [liftedChoiceCuteness, liftedSetChoiceCuteness] = useState();
   const [showPurchaseItemComponent, setShowPurchaseItemComponent] = useState(false);
 
   return (
@@ -25,7 +25,7 @@ function App() {
 <Title className="grid1"/>
 <PhotoSlider className="grid2"/>
 <CheckOut className="grid3" liftedSetChoice={liftedSetChoice} liftedSetChoiceCuteness={liftedSetChoiceCuteness} showPurchaseItemComponent={showPurchaseItemComponent} setShowPurchaseItemComponent={setShowPurchaseItemComponent}/>
-<Footer className="grid4"/>
+
 {showPurchaseItemComponent && (
   <PurchaseItem
     liftedChoice={liftedChoice}
@@ -34,7 +34,7 @@ function App() {
 )}
 
 </section>
-
+<Footer className="grid4"/>
 {/*placeHolders */}
 
 

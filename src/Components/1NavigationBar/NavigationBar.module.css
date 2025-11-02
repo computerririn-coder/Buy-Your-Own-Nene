@@ -13,11 +13,11 @@
   background: linear-gradient(90deg, #a2eb6e 0%, #2ecc71 100%);
   color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-
-    border-bottom: 3px solid;
+  border-bottom: 3px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(90deg, #d4f38e, #a2eb6e);
-
+  position: fixed; /* or sticky */
+  z-index: 1; /*Fixed my photoSliders being on top of my navbar when schrolling*/
 }
 
 .container a {
@@ -38,14 +38,17 @@ align-items: center;
 
 .nonLogoItems {
   display: flex;
-
   gap: 3rem;
   margin-left: auto;
   margin-right: 3rem;
+  
 }
 
-
+.nonLogoItems a {
+      transition: transform 0.3s ease, color 0.3s ease; /* i dont know animations this from gpt */
+}
 
 .container a:hover {
-  color: #55efc4;
+  color: #1eff00;
+     transform: scale(1.2);
 }

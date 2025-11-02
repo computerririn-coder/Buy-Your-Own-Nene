@@ -2,7 +2,10 @@
   position: relative;
   width: 100%;
   height: 100%;
+  max-width: clamp(10rem, 20vw, 14rem);
+  max-height: clamp(10rem, 20vw, 14rem);
 }
+
 
 
 .buttonContainer {

@@ -4,6 +4,7 @@
   box-sizing: border-box; /* prevents overflow */
   color: #f9f9f9; /* main text - soft white for contrast */
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* improves clarity on green */
+
 }
 
 .textContainer {
@@ -13,12 +14,15 @@ flex-direction: column;
 justify-content: center;
 margin-left: 2rem;
 margin-top: 1rem;
+
 }
 
 .textContainer span {
-  color: #fffacd; /* light yellow for accent lines */
+  color: #fffacd; 
+  font-weight: bold;
 }
 
 .textContainer h1 {
-  color: #ffffff; /* pure white for main title */
+  color: #ffffff; 
+  font-weight: bold;
 }

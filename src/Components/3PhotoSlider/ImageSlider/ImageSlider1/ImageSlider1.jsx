@@ -71,3 +71,4 @@ useEffect(() => {
 }
 
 export default ImageSlider;
+

@@ -9,11 +9,15 @@
   gap: 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border: 2px solid yellowgreen;
-  margin-top: 10rem;
+  margin-top: 5rem;
   position: absolute;
-left: 35%;
-}
+  left: 35%;
 
+/*I Currently Dont know Animations This is from chatgpt, i only know surface level knoledges for animations*/
+  opacity: 0; /*starts at 0 opcacity*/
+  transform: var(--final-transform) translateY(-10rem); /*starts at 10rem above */
+  animation: fadeSlideIn 0.4s ease-out forwards; /*Animation*/
+}
 .title {
   font-size: 1.6rem;
   font-weight: 700;
@@ -111,3 +115,29 @@ left: 35%;
 .purchaseBtn:hover {
   background-color: #76c776;
 }
+
+/*I Currently Dont know Animations This is from chatgpt, i only know surface level knoledges for animations*/
+@keyframes fadeSlideIn {
+  to {
+    transform: var(--final-transform) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+  .container {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    --final-transform: translate(-50%, -50%);
+  }
+}
+
+/* Desktop layout */
+@media (min-width: 701px) {
+  .container {
+    --final-transform: translate(0, 0);
+  }
+}
+

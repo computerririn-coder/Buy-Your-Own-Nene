@@ -9,6 +9,8 @@
   background-color: aquamarine;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   font-family: Tahoma, sans-serif;
+  background-color: darkturquoise;
+
 }
 
 .title {
@@ -24,6 +26,15 @@
   flex-direction: row;
   align-items: center;
   gap: 15rem;
+  padding-bottom: 1rem;
+}
+
+.qualityText{
+color: darkblue;
+}
+
+.cutenessText{
+color: violet;
 }
 
 .formContainer {
@@ -35,9 +46,9 @@
 .options2 {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-top: 1rem;
-  padding: 0 2rem;
+gap: 3rem;
+padding-left: 1rem;
+padding-right: 1rem;
 }
 
 .radioRect {
@@ -64,6 +75,7 @@
 }
 
 .leftText {
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -81,9 +93,10 @@
 
 .mySubmit {
   align-self: flex-end;
-  margin-right: 0rem;
-  padding: 1rem;
   margin-top: auto;
+margin-bottom: 0.2rem;
+margin-right: 0.2rem;
+
 }
 
 .mySubmit button {
@@ -91,7 +104,7 @@
   color: #2d3436;
   font-weight: 600;
   font-size: 1rem;
-  padding: 0.8rem 2rem;
+  padding: 0.2rem;
   border: 2px solid #2d3436;
   border-radius: 12px;
   cursor: pointer;
@@ -112,10 +125,22 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
+
 .ribbon {
   position: absolute;
   top: -20px;
   right: -20px;
   width: 4rem;
   transform: rotate(25deg);
+}
+
+@media (max-width: 700px) {
+.container{
+  transform: scale(0.9);
+}
+
+ .mySubmit{
+  transform: scale(1);
+  margin-right: 4rem;
+ }
 }

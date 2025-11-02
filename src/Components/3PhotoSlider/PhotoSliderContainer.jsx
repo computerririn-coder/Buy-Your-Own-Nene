@@ -12,7 +12,10 @@ function PhotoSlider({className}) {
         <section className={`${styles.container} ${className} ${styles.gridContainer}`}>
 <ImageSlider1/>    
 <ImageSlider2/>
-<ImageSlider3/>
+<div  className={styles.thirdImageSlider}>
+    <ImageSlider3/>
+</div>
+
   </section>
         </>
     );

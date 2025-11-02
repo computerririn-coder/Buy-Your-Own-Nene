@@ -5,15 +5,9 @@
 
 html, body {
     background-image: url('BackRoundImage.jpg');
-    background-size: cover;      /* makes the image cover the entire element */
-    background-position: center; /* centers the image */
-    background-repeat: repeat; /* prevents tiling */
-    width: 100%;                 /* ensures the element has width */
-    height: 100vh;               /* ensures the element fills the viewport height */
-  
-  color: white;
-  height: 100%;
-  margin: 0;
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: repeat; 
 }
 
 
@@ -26,27 +20,33 @@ html, body {
   grid-template-areas: 
     "gridProductTitle gridProductTitle"
     "gridSectionLeft gridSectionRight"
-    "Footer Footer"
+"Footer Footer"
     ;
 
 grid-template-columns: 1fr 1fr;
 grid-template-rows: 10rem 30.6rem 2rem;
 padding-top: 3rem;
 
-
+  overflow: hidden;
 
 }
 
 .grid1 {  grid-area: gridProductTitle;}
 .grid2 { grid-area: gridSectionLeft; }
 .grid3 { grid-area: gridSectionRight; }
-.grid4 { grid-area: Footer;}
+
 
 /*Media queries*/
 
-/* Stack on small screens */
-
-
+@media (max-width: 700px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem; /* optional — adds space between items */
+  }
+}
 
 
 
