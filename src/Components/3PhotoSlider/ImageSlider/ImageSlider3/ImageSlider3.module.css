@@ -1,6 +1,5 @@
 .container {
   position: relative;
-  background-color: #ff8b94;
 width: 20rem;
 margin-left: 4rem;
   max-width: clamp(20rem, 40vw, 30rem);

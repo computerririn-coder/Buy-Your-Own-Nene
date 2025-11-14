@@ -1,5 +1,7 @@
-import { useReducer } from "react";
+import { useReducer } from "react"; // Removed useEffect import
 import styles from "./PurchaseItem.module.css";
+
+const initialCartState = [];
 
 function reducer(state, action) {
   switch (action.type) {
@@ -8,9 +10,21 @@ function reducer(state, action) {
       return state;
 
     case "PURCHASE":
-      if (!action.liftedChoice) {
-        return { ...state, error: "Please select Quality." };
+      if (!action.quality) {
+        return {...state, error: "Please select Quality."};
       }
+      if(initialCartState.length ===  3){
+        return {...state, error: "Can only add maximum of 3 items in your cart"}
+      }
+      const newItem = {
+        quality: action.quality,
+        cuteness: action.cuteness,
+      };
+
+      initialCartState.push(newItem)
+      action.setInitialCartState(initialCartState)
+      action.setShowPurchaseItemComponent(false);
+      console.log(initialCartState);
 
     default:
       return state;
@@ -18,21 +32,26 @@ function reducer(state, action) {
 }
 
 function PurchaseItem({
-  liftedChoice,
+  liftedChoiceQuality,
   liftedChoiceCuteness,
   setShowPurchaseItemComponent,
+  setInitialCartState,
+  
 }) {
-  const [state, dispatch] = useReducer(reducer, { error: "" });
+  const [state, dispatch] = useReducer(reducer, {
+    cart: initialCartState,
+    error: null,
+  });
 
   const randomNum = Math.floor(Math.random() * 3) + 1;
   const image = `/ImageSliderImages/ImageSlider1Images/Slider1Image${randomNum}.jpg`;
 
   const price =
-    (liftedChoice === "SubStandard"
+    (liftedChoiceQuality === "SubStandard"
       ? 79990
-      : liftedChoice === "Standard"
+      : liftedChoiceQuality === "Standard"
       ? 99990
-      : liftedChoice === "Premium"
+      : liftedChoiceQuality === "Premium"
       ? 149990
       : 0) +
     (liftedChoiceCuteness === "50%"
@@ -48,12 +67,15 @@ function PurchaseItem({
       <h1 className={styles.title}>Check Out?</h1>
 
       <div className={styles.imagePlaceholder}>
-        <img src={image} alt="" />
+        <img src={image} alt="img" />
       </div>
 
-      <p className={styles.itemName}>Quality: {liftedChoice}</p>
+      <p className={styles.itemName}>Quality: {liftedChoiceQuality}</p>
       <p className={styles.itemVariation}>Cuteness: {liftedChoiceCuteness}</p>
       <p className={styles.itemPrice}>Price: {price}</p>
+      <button onClick={() => console.log(state.cart)}>
+        log Cart State(remove later)
+      </button>
 
       {state.error && <p>{state.error}</p>}
 
@@ -75,8 +97,10 @@ function PurchaseItem({
           onClick={() =>
             dispatch({
               type: "PURCHASE",
-              liftedChoice,
-              liftedChoiceCuteness,
+               setShowPurchaseItemComponent,
+               setInitialCartState,
+              quality: liftedChoiceQuality,
+              cuteness: liftedChoiceCuteness,
             })
           }
         >

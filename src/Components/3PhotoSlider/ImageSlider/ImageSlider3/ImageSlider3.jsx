@@ -2,7 +2,7 @@ import { useState , useEffect} from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import styles from './ImageSlider3.module.css';
 
-function ImageSlider() {
+function ImageSlider3() {
   const [count, setCount] = useState(1);
   const [fade, setFade] = useState(false);
 
@@ -70,4 +70,4 @@ function ImageSlider() {
   );
 }
 
-export default ImageSlider;
+export default ImageSlider3;

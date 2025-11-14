@@ -9,7 +9,7 @@ import styles from './PhotoSliderContainer.module.css';
 function PhotoSlider({className}) {
     return ( 
         <>
-        <section className={`${styles.container} ${className} ${styles.gridContainer}`}>
+        <section className={`${styles.container} ${className} ${styles.gridContainer} mt-20`}>
 <ImageSlider1/>    
 <ImageSlider2/>
 <div  className={styles.thirdImageSlider}>

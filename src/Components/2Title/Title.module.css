@@ -1,20 +1,17 @@
 .container {
   width: 100%;
   height: 8rem;
-  box-sizing: border-box; /* prevents overflow */
-  color: #f9f9f9; /* main text - soft white for contrast */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* improves clarity on green */
-
+  color: #f9f9f9;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); 
 }
 
 .textContainer {
 font-size: 1.5rem;
 display: flex;
-flex-direction: column;
-justify-content: center;
+flex-direction: row;
+justify-content: space-between;
 margin-left: 2rem;
 margin-top: 1rem;
-
 }
 
 .textContainer span {
@@ -25,4 +22,15 @@ margin-top: 1rem;
 .textContainer h1 {
   color: #ffffff; 
   font-weight: bold;
+}
+
+.cartContainer{
+  padding-right: 2rem;
+  padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+.container{
+  padding-left: 5%;
+}
 }

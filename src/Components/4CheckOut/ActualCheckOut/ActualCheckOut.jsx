@@ -1,13 +1,13 @@
 import { use, useState } from 'react';
 import styles from './ActualCheckOut.module.css';
 
-function ActualCheckOut({ liftedSetChoice, liftedSetChoiceCuteness, showPurchaseItemComponent, setShowPurchaseItemComponent }) {
-  const [choice, setChoice] = useState('');
+function ActualCheckOut({ liftedSetChoiceQuality, liftedSetChoiceCuteness, setShowPurchaseItemComponent }) {
+  const [choiceQuality, setChoiceQuality] = useState('');
   const [choiceCuteness, setChoiceCuteness] = useState('None');
 
   function handleSubmit(e) {
     e.preventDefault();
-    liftedSetChoice(choice);
+    liftedSetChoiceQuality(choiceQuality);
     liftedSetChoiceCuteness(choiceCuteness);
     setShowPurchaseItemComponent(true);
   }
@@ -25,9 +25,9 @@ function ActualCheckOut({ liftedSetChoice, liftedSetChoiceCuteness, showPurchase
         {/* Option Group 1 */}
         <form className={styles.options1}>
           <label
-            className={`${styles.radioRect} ${choice === 'SubStandard' ? styles.checked : ''}`}
+            className={`${styles.radioRect} ${choiceQuality === 'SubStandard' ? styles.checked : ''}`}
           >
-            {choice === 'SubStandard' && (
+            {choiceQuality === 'SubStandard' && (
               <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
             )}
 
@@ -42,18 +42,18 @@ function ActualCheckOut({ liftedSetChoice, liftedSetChoiceCuteness, showPurchase
 
             <input
               type="radio"
-              name="choice"
+              name="choice1"
               value="SubStandard"
-              checked={choice === 'SubStandard'}
-              onChange={(e) => setChoice(e.target.value)}
-              onClick={() => setChoice(prev => (prev === 'SubStandard' ? '' : 'SubStandard'))}
+              checked={setChoiceQuality === 'SubStandard'}
+              onChange={(e) => setChoiceQuality(e.target.value)}
+              onClick={() => setChoiceQuality(prev => (prev === 'SubStandard' ? '' : 'SubStandard'))}
             />
           </label>
 
           <label
-            className={`${styles.radioRect} ${choice === 'Standard' ? styles.checked : ''}`}
+            className={`${styles.radioRect} ${choiceQuality === 'Standard' ? styles.checked : ''}`}
           >
-            {choice === 'Standard' && (
+            {choiceQuality === 'Standard' && (
               <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
             )}
 
@@ -68,18 +68,18 @@ function ActualCheckOut({ liftedSetChoice, liftedSetChoiceCuteness, showPurchase
 
             <input
               type="radio"
-              name="choice"
-              value="Standard"
-              checked={choice === 'Standard'}
-              onChange={(e) => setChoice(e.target.value)}
-              onClick={() => setChoice(prev => (prev === 'Standard' ? '' : 'Standard'))}
+              name="choice1"
+              value='Standard'
+              checked={setChoiceQuality === 'Standard'}
+              onChange={(e) => setChoiceQuality(e.target.value)}
+              onClick={() => setChoiceQuality(prev => (prev === 'Standard' ? '' : 'Standard'))}
             />
           </label>
 
           <label
-            className={`${styles.radioRect} ${choice === 'Premium' ? styles.checked : ''}`}
+            className={`${styles.radioRect} ${choiceQuality === 'Premium' ? styles.checked : ''}`}
           >
-            {choice === 'Premium' && (
+            {choiceQuality === 'Premium' && (
               <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
             )}
 
@@ -94,11 +94,11 @@ function ActualCheckOut({ liftedSetChoice, liftedSetChoiceCuteness, showPurchase
 
             <input
               type="radio"
-              name="choice"
+              name="choice1"
               value="Premium"
-              checked={choice === 'Premium'}
-              onChange={(e) => setChoice(e.target.value)}
-              onClick={() => setChoice(prev => (prev === 'Premium' ? '' : 'Premium'))}
+              checked={setChoiceQuality === 'Premium'}
+              onChange={(e) => setChoiceQuality(e.target.value)}
+              onClick={() => setChoiceQuality(prev => (prev === 'Premium' ? '' : 'Premium'))}
             />
           </label>
         </form>
@@ -123,7 +123,7 @@ function ActualCheckOut({ liftedSetChoice, liftedSetChoiceCuteness, showPurchase
 
     <input
       type="radio"
-      name="optionCuteness"
+      name="choice2"
       value="50%"
       checked={choiceCuteness === '50%'}
       onChange={(e) => setChoiceCuteness(e.target.value)}
@@ -149,7 +149,7 @@ function ActualCheckOut({ liftedSetChoice, liftedSetChoiceCuteness, showPurchase
 
     <input
       type="radio"
-      name="optionCuteness"
+      name="choice2"
       value="75%"
       checked={choiceCuteness === '75%'}
       onChange={(e) => setChoiceCuteness(e.target.value)}
@@ -175,7 +175,7 @@ function ActualCheckOut({ liftedSetChoice, liftedSetChoiceCuteness, showPurchase
 
     <input
       type="radio"
-      name="optionCuteness"
+      name="choice2"
       value="100%"
       checked={choiceCuteness === '100%'}
       onChange={(e) => setChoiceCuteness(e.target.value)}

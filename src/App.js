@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import NavigationBar from './Components/1NavigationBar/Git.jsx';
+import NavigationBar from './Components/1NavigationBar/NavigationBar.jsx';
 import Title from './Components/2Title/Title.jsx';
 import PhotoSlider from './Components/3PhotoSlider/PhotoSliderContainer.jsx';
 
@@ -9,13 +9,14 @@ import Footer from './Components/5Footer/Footer.jsx'
 //PlaceHolders
 import ImageSlider from './Components/3PhotoSlider/ImageSlider/ImageSlider1/ImageSlider1.jsx';
 import PurchaseItem from './Components/6PurchaseItem/PurchaseItem.jsx';
-import { useState } from 'react';
-
+import { use, useState } from 'react';
+import Sidebar from './Components/7Sidebar/Sidebar.jsx';
+import Cart from './Components/8Cart/Cart.jsx';
 function App() {
-  const [liftedChoice, liftedSetChoice] = useState();
+  const [liftedChoiceQuality, liftedSetChoiceQuality] = useState();
   const [liftedChoiceCuteness, liftedSetChoiceCuteness] = useState();
   const [showPurchaseItemComponent, setShowPurchaseItemComponent] = useState(false);
-
+const [initialCartState,setInitialCartState] = useState([]);
   return (
     <div className="App">
       <nav>
@@ -24,20 +25,22 @@ function App() {
 <section className='grid-container'>
 <Title className="grid1"/>
 <PhotoSlider className="grid2"/>
-<CheckOut className="grid3" liftedSetChoice={liftedSetChoice} liftedSetChoiceCuteness={liftedSetChoiceCuteness} showPurchaseItemComponent={showPurchaseItemComponent} setShowPurchaseItemComponent={setShowPurchaseItemComponent}/>
+<CheckOut className="grid3" liftedSetChoiceQuality={liftedSetChoiceQuality} liftedSetChoiceCuteness={liftedSetChoiceCuteness} showPurchaseItemComponent={showPurchaseItemComponent} setShowPurchaseItemComponent={setShowPurchaseItemComponent}/>
 <Footer/>
 {showPurchaseItemComponent && (
   <PurchaseItem
-    liftedChoice={liftedChoice}
+    liftedChoiceQuality={liftedChoiceQuality}
     liftedChoiceCuteness={liftedChoiceCuteness}
     setShowPurchaseItemComponent={setShowPurchaseItemComponent}
+    initialCartState={initialCartState}
+    setInitialCartState={setInitialCartState}
   />
 )}
 
 </section>
 
 {/*placeHolders */}
-
+<Cart initialCartState={initialCartState}/>
 
     </div>
   );

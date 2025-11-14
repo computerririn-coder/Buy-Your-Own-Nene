@@ -1,9 +1,6 @@
 .container {
-
-    
   width: 100%;
-  transform: scale(1.4);
-
+  transform: scale(1.2);
 }
 
 .gridContainer {
@@ -14,13 +11,13 @@
   grid-template-columns: 14rem 14rem;
   grid-template-rows: 14rem 14rem;
   gap: 2rem;
-  margin-top: -1rem;
 
   justify-content: center;     
   justify-items: center;       
   margin-left: auto;           
   margin-right: auto;
-  margin-top: 5rem;
+  margin-top: -5rem;
+    margin-top: 1rem;
 }
 
 .slider1 { grid-area: slider1; }
@@ -36,6 +33,6 @@ margin-left: 13rem;
   transform: scale(1);
 }
 .gridContainer{
-margin-top: -4rem;
+padding-bottom: 10rem;
 }
 }
