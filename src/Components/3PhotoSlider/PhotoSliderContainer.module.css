@@ -31,8 +31,5 @@ margin-left: 13rem;
 @media (max-width: 768px) {
 .container{
   transform: scale(1);
-}
-.gridContainer{
-padding-bottom: 10rem;
-}
+} 
 }

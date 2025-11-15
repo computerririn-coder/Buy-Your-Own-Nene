@@ -1,23 +1,39 @@
-import { useReducer } from "react";
 import styles from "./Cart.module.css";
-function Cart( { initialCartState} ) {
 
-  const image = `/ImageSliderImages/ImageSlider1Images/Slider1Image1.jpg`;
+function Cart({ initialCartState, setInitialCartState, setShowPurchaseItemComponentCart }) {
+  const image = "/ImageSliderImages/ImageSlider1Images/Slider1Image1.jpg";
+
+  const removeItem = (id) => {
+    const updatedCart = initialCartState.filter(item => item.id !== id);
+    setInitialCartState(updatedCart);
+  };
+
   return (
     <section className={styles.container}>
-{initialCartState.map(element => (
-  <div key={element.id} className={styles.card}>
+      <button
+        className={styles.closeBtn}
+        onClick={() => setShowPurchaseItemComponentCart(false)}
+      >
+        ×
+      </button>
 
-<div className={styles.image}>
-<img src={image} alt="img" />
-</div>
-<p>{element.quality}</p>
-<p>{element.cuteness}</p>
-<p>{element.price}</p>
-<button>Remove from cart</button>
-<button>Check Out</button>
-  </div>
-))}
+      {initialCartState.length === 0 && <p>Your cart is empty.</p>}
+
+      {initialCartState.map((element) => (
+        <div key={element.id} className={styles.card}>
+          <div className={styles.image}>
+            <img src={image} alt="img" />
+          </div>
+
+          <p>ID: {element.id}</p>
+          <p>Quality: {element.quality}</p>
+          <p>Cuteness: {element.cuteness}</p>
+          <p>Price: {element.price}</p>
+
+          <button onClick={() => removeItem(element.id)}>Remove from cart</button>
+          <button>Check Out</button>
+        </div>
+      ))}
     </section>
   );
 }

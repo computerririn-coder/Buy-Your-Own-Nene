@@ -1,6 +1,6 @@
 import styles from './Title.module.css';
 
-function Title({ className }) {
+function Title({ className, setShowPurchaseItemComponentCart }) {
   return (
     <section className={`${styles.container} ${className}`}>
       <div className={styles.textContainer}>
@@ -9,9 +9,10 @@ function Title({ className }) {
         <h1>Nene Kusanagi</h1>
         <span>From ₱999,999</span>
         </div>
-              <div className={styles.cartContainer}>
-        <p>placeholderCart</p>
-      </div>
+<div className={styles.cartContainer} onClick={() => setShowPurchaseItemComponentCart(true)}>
+  🛒
+</div>
+
       </div>
 
     </section>

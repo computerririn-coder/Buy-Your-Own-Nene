@@ -1,10 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 html, body {
-    background-image: url('BackRoundImage.jpg');
+    background-image: url('/public/BackRoundImage.jpg');
     background-size: cover;      
     background-position: center; 
     background-repeat: repeat; 

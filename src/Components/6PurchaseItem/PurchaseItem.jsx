@@ -1,7 +1,7 @@
-import { useReducer } from "react"; // Removed useEffect import
+import { useReducer } from "react";
 import styles from "./PurchaseItem.module.css";
 
-const initialCartState = [];
+let nextId = 1;
 
 function reducer(state, action) {
   switch (action.type) {
@@ -10,21 +10,28 @@ function reducer(state, action) {
       return state;
 
     case "PURCHASE":
+      const cart = action.currentCart;
+
       if (!action.quality) {
-        return {...state, error: "Please select Quality."};
+        return { ...state, error: "Please select Quality." };
       }
-      if(initialCartState.length ===  3){
-        return {...state, error: "Can only add maximum of 3 items in your cart"}
+
+      if (cart.length === 4) {
+        return { ...state, error: "Can only add maximum of 4 items in your cart" };
       }
+
       const newItem = {
         quality: action.quality,
         cuteness: action.cuteness,
+        id: action.nextId,
       };
 
-      initialCartState.push(newItem)
-      action.setInitialCartState(initialCartState)
+      cart.push(newItem);
+      action.setInitialCartState([...cart]);
       action.setShowPurchaseItemComponent(false);
-      console.log(initialCartState);
+      console.log(cart);
+
+      return { ...state, error: null };
 
     default:
       return state;
@@ -35,8 +42,8 @@ function PurchaseItem({
   liftedChoiceQuality,
   liftedChoiceCuteness,
   setShowPurchaseItemComponent,
+  initialCartState,
   setInitialCartState,
-  
 }) {
   const [state, dispatch] = useReducer(reducer, {
     cart: initialCartState,
@@ -62,6 +69,20 @@ function PurchaseItem({
       ? 3000
       : 0);
 
+  const handlePurchase = () => {
+    dispatch({
+      type: "PURCHASE",
+      setShowPurchaseItemComponent,
+      setInitialCartState,
+      quality: liftedChoiceQuality,
+      cuteness: liftedChoiceCuteness,
+      nextId: nextId,
+      currentCart: initialCartState,
+    });
+
+    nextId += 1;
+  };
+
   return (
     <section className={styles.container}>
       <h1 className={styles.title}>Check Out?</h1>
@@ -73,9 +94,6 @@ function PurchaseItem({
       <p className={styles.itemName}>Quality: {liftedChoiceQuality}</p>
       <p className={styles.itemVariation}>Cuteness: {liftedChoiceCuteness}</p>
       <p className={styles.itemPrice}>Price: {price}</p>
-      <button onClick={() => console.log(state.cart)}>
-        log Cart State(remove later)
-      </button>
 
       {state.error && <p>{state.error}</p>}
 
@@ -92,18 +110,7 @@ function PurchaseItem({
           Back
         </button>
 
-        <button
-          className={styles.purchaseBtn}
-          onClick={() =>
-            dispatch({
-              type: "PURCHASE",
-               setShowPurchaseItemComponent,
-               setInitialCartState,
-              quality: liftedChoiceQuality,
-              cuteness: liftedChoiceCuteness,
-            })
-          }
-        >
+        <button className={styles.purchaseBtn} onClick={handlePurchase}>
           Purchase
         </button>
       </div>

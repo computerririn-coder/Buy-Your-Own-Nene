@@ -44,7 +44,7 @@ function ActualCheckOut({ liftedSetChoiceQuality, liftedSetChoiceCuteness, setSh
               type="radio"
               name="choice1"
               value="SubStandard"
-              checked={setChoiceQuality === 'SubStandard'}
+              checked={choiceQuality === 'SubStandard'}
               onChange={(e) => setChoiceQuality(e.target.value)}
               onClick={() => setChoiceQuality(prev => (prev === 'SubStandard' ? '' : 'SubStandard'))}
             />
@@ -70,7 +70,7 @@ function ActualCheckOut({ liftedSetChoiceQuality, liftedSetChoiceCuteness, setSh
               type="radio"
               name="choice1"
               value='Standard'
-              checked={setChoiceQuality === 'Standard'}
+              checked={choiceQuality === 'Standard'}
               onChange={(e) => setChoiceQuality(e.target.value)}
               onClick={() => setChoiceQuality(prev => (prev === 'Standard' ? '' : 'Standard'))}
             />
@@ -96,7 +96,7 @@ function ActualCheckOut({ liftedSetChoiceQuality, liftedSetChoiceCuteness, setSh
               type="radio"
               name="choice1"
               value="Premium"
-              checked={setChoiceQuality === 'Premium'}
+              checked={choiceQuality === 'Premium'}
               onChange={(e) => setChoiceQuality(e.target.value)}
               onClick={() => setChoiceQuality(prev => (prev === 'Premium' ? '' : 'Premium'))}
             />
