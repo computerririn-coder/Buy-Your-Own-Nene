@@ -8,15 +8,19 @@
 }
 
 
+
+
 .buttonContainer {
   position: absolute;
   top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+  width: 90%; 
   transform: translateY(-50%);
-  pointer-events: none;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  display: flex;
+  justify-content: space-between; 
 }
+
 
 .arrow {
   background: rgba(255, 255, 255, 0.7);
@@ -24,12 +28,7 @@
   padding: 0.5em;
   border-radius: 50%;
   cursor: pointer;
-  pointer-events: all;
-  font-size: 1rem;
-  margin-left: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 0.5rem;
 }
 
 .arrow:hover {

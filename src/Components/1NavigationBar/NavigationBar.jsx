@@ -2,7 +2,7 @@
 
 import styles from './NavigationBar.module.css'
 
-function NavigationBar({ className }) {
+function NavigationBar({ className,setShowContactsComponent  }) {
     return (
         <nav className={`${styles.container} ${className} `}>
 <div className={styles.logo}>
@@ -12,9 +12,13 @@ function NavigationBar({ className }) {
 </div>
 
        <div className={styles.nonLogoItems}>  
-            <a href="#" className='text-red-500'>Portfolio Site</a>
+
+            <a href="#">Portfolio Site</a>
             <a href="https://github.com/computerririn-coder/Buy-Your-Own-Nene">Github_Project_Link</a>
-            <a href="#" className="bg-black">Contact</a>
+            <div>
+              <a href="#" className={styles.contacts} onClick={() => setShowContactsComponent(true)}>Contact</a>
+            </div>
+            
        </div>
 
         </nav>

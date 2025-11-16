@@ -30,7 +30,7 @@ function reducer(state, action) {
       action.setInitialCartState([...cart]);
       action.setShowPurchaseItemComponent(false);
       console.log(cart);
-
+window.alert("Item added to cart")
       return { ...state, error: null };
 
     default:

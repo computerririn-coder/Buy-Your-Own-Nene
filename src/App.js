@@ -12,18 +12,20 @@ import PurchaseItem from './Components/6PurchaseItem/PurchaseItem.jsx';
 import { use, useState } from 'react';
 import Sidebar from './Components/7Sidebar/Sidebar.jsx';
 import Cart from './Components/8Cart/Cart.jsx';
-import Contacts from './Components/Links/Contacts.jsx';
+import Contacts from './Components/1NavigationBar/Contacts/Contacts.jsx';
+
 import { Contact } from 'lucide-react';
 function App() {
   const [liftedChoiceQuality, liftedSetChoiceQuality] = useState();
   const [liftedChoiceCuteness, liftedSetChoiceCuteness] = useState();
   const [showPurchaseItemComponent, setShowPurchaseItemComponent] = useState(false);
+  const [showContactsComponent, setShowContactsComponent] = useState(false);
     const [showPurchaseItemComponentCart, setShowPurchaseItemComponentCart] = useState(false);
 const [initialCartState,setInitialCartState] = useState([]);
   return (
     <div className="App">
       <nav>
-<NavigationBar/>
+<NavigationBar setShowContactsComponent={setShowContactsComponent}/>
       </nav>
 <section className='grid-container'>
 <Title className="grid1" setShowPurchaseItemComponentCart={setShowPurchaseItemComponentCart}/>
@@ -43,11 +45,14 @@ const [initialCartState,setInitialCartState] = useState([]);
 {showPurchaseItemComponentCart && (
   <Cart initialCartState={initialCartState}  setInitialCartState={setInitialCartState} setShowPurchaseItemComponentCart={setShowPurchaseItemComponentCart}/>
 )}
+{showContactsComponent && (
+  <Contacts setShowContactsComponent={setShowContactsComponent}/>
+)}
 
 </section>
 
 {/*placeHolders */}
-<Contacts/>
+
 
     </div>
   );

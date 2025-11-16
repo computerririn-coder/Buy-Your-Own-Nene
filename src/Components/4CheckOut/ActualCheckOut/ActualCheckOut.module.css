@@ -55,7 +55,11 @@
   flex: 1 1 200px;
 }
 
-.radioRect {
+
+
+.radioRectangle1,
+.radioRectangle2
+{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,9 +71,11 @@
   background-color: yellowgreen;
   cursor: pointer;
   position: relative;
-
 }
 
+.radioRectangle2{
+  background-color: pink;
+}
 .radioRect input {
   display: none;
 }
@@ -133,3 +139,17 @@
   .container {    height: 150%;
   }
 }
+
+/*from ai to make radio button default circle thing disappear*/
+
+/* In ActualCheckOut.module.css */
+
+.radioRectangle1 input[type="radio"],
+.radioRectangle2 input[type="radio"] {
+  /* Visually hide the original radio button */
+  position: absolute;
+  opacity: 0; /* Makes it completely invisible */
+  pointer-events: none; /* Ensures clicks go through to the label */
+}
+
+/*end*/

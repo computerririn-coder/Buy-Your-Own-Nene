@@ -10,7 +10,7 @@ function Title({ className, setShowPurchaseItemComponentCart }) {
         <span>From ₱999,999</span>
         </div>
 <div className={styles.cartContainer} onClick={() => setShowPurchaseItemComponentCart(true)}>
-  🛒
+  🛒<br></br> <h5>Cart</h5>
 </div>
 
       </div>

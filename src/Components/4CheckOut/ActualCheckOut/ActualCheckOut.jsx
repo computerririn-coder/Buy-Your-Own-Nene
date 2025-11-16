@@ -25,7 +25,7 @@ function ActualCheckOut({ liftedSetChoiceQuality, liftedSetChoiceCuteness, setSh
         {/* Option Group 1 */}
         <form className={styles.options1}>
           <label
-            className={`${styles.radioRect} ${choiceQuality === 'SubStandard' ? styles.checked : ''}`}
+            className={`${styles.radioRectangle1} ${choiceQuality === 'SubStandard' ? styles.checked : ''}`}
           >
             {choiceQuality === 'SubStandard' && (
               <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
@@ -51,7 +51,7 @@ function ActualCheckOut({ liftedSetChoiceQuality, liftedSetChoiceCuteness, setSh
           </label>
 
           <label
-            className={`${styles.radioRect} ${choiceQuality === 'Standard' ? styles.checked : ''}`}
+            className={`${styles.radioRectangle1} ${choiceQuality === 'Standard' ? styles.checked : ''}`}
           >
             {choiceQuality === 'Standard' && (
               <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
@@ -77,7 +77,7 @@ function ActualCheckOut({ liftedSetChoiceQuality, liftedSetChoiceCuteness, setSh
           </label>
 
           <label
-            className={`${styles.radioRect} ${choiceQuality === 'Premium' ? styles.checked : ''}`}
+            className={`${styles.radioRectangle1} ${choiceQuality === 'Premium' ? styles.checked : ''}`}
           >
             {choiceQuality === 'Premium' && (
               <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
@@ -105,84 +105,84 @@ function ActualCheckOut({ liftedSetChoiceQuality, liftedSetChoiceCuteness, setSh
 
         {/* Option Group 2 */}
        <form className={styles.options2}>
-  <label
-    className={`${styles.radioRect} ${choiceCuteness === '50%' ? styles.checked : ''}`}
-  >
-    {choiceCuteness === '50%' && (
-      <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
-    )}
+          <label
+            className={`${styles.radioRectangle2} ${choiceCuteness === '50%' ? styles.checked : ''}`}
+          >
+            {choiceCuteness === '50%' && (
+              <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
+            )}
 
-    <span className={styles.leftText}>
-      <h3>50% Cute</h3>
-      <h6>Placeholder</h6>
-    </span>
+            <span className={styles.leftText}>
+              <h3>50% Cute</h3>
+              <h6>Placeholder</h6>
+            </span>
 
-    <span className={styles.rightText}>
-      <h6>Additional ₱1,000</h6>
-    </span>
+            <span className={styles.rightText}>
+              <h6>Additional ₱1,000</h6>
+            </span>
 
-    <input
-      type="radio"
-      name="choice2"
-      value="50%"
-      checked={choiceCuteness === '50%'}
-      onChange={(e) => setChoiceCuteness(e.target.value)}
-      onClick={() => setChoiceCuteness(prev => (prev === '50%' ? '' : '50%'))}
-    />
-  </label>
+            <input
+              type="radio"
+              name="choice2"
+              value="50%"
+              checked={choiceCuteness === '50%'}
+              onChange={(e) => setChoiceCuteness(e.target.value)}
+              onClick={() => setChoiceCuteness(prev => (prev === '50%' ? '' : '50%'))}
+            />
+          </label>
 
-  <label
-    className={`${styles.radioRect} ${choiceCuteness === '75%' ? styles.checked : ''}`}
-  >
-    {choiceCuteness === '75%' && (
-      <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
-    )}
+          <label
+            className={`${styles.radioRectangle2} ${choiceCuteness === '75%' ? styles.checked : ''}`}
+          >
+            {choiceCuteness === '75%' && (
+              <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
+            )}
 
-    <span className={styles.leftText}>
-      <h3>75% Cute</h3>
-      <h6>Placeholder</h6>
-    </span>
+            <span className={styles.leftText}>
+              <h3>75% Cute</h3>
+              <h6>Placeholder</h6>
+            </span>
 
-    <span className={styles.rightText}>
-      <h6>Additional ₱2,000</h6>
-    </span>
+            <span className={styles.rightText}>
+              <h6>Additional ₱2,000</h6>
+            </span>
 
-    <input
-      type="radio"
-      name="choice2"
-      value="75%"
-      checked={choiceCuteness === '75%'}
-      onChange={(e) => setChoiceCuteness(e.target.value)}
-      onClick={() => setChoiceCuteness(prev => (prev === '75%' ? '' : '75%'))}
-    />
-  </label>
+            <input
+              type="radio"
+              name="choice2"
+              value="75%"
+              checked={choiceCuteness === '75%'}
+              onChange={(e) => setChoiceCuteness(e.target.value)}
+              onClick={() => setChoiceCuteness(prev => (prev === '75%' ? '' : '75%'))}
+            />
+          </label>
 
-  <label
-    className={`${styles.radioRect} ${choiceCuteness === '100%' ? styles.checked : ''}`}
-  >
-    {choiceCuteness === '100%' && (
-      <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
-    )}
+          <label
+            className={`${styles.radioRectangle2} ${choiceCuteness === '100%' ? styles.checked : ''}`}
+          >
+            {choiceCuteness === '100%' && (
+              <img src="/ribbon.png" alt="Ribbon" className={styles.ribbon} />
+            )}
 
-    <span className={styles.leftText}>
-      <h3>100% Cute</h3>
-      <h6>Placeholder</h6>
-    </span>
+            <span className={styles.leftText}>
+              <h3>100% Cute</h3>
+              <h6>Placeholder</h6>
+            </span>
 
-    <span className={styles.rightText}>
-      <h6>Additional ₱3,000</h6>
-    </span>
+            <span className={styles.rightText}>
+              <h6>Additional ₱3,000</h6>
+            </span>
 
-    <input
-      type="radio"
-      name="choice2"
-      value="100%"
-      checked={choiceCuteness === '100%'}
-      onChange={(e) => setChoiceCuteness(e.target.value)}
-      onClick={() => setChoiceCuteness(prev => (prev === '100%' ? '' : '100%'))}
-    />
-  </label>
-</form>
+            <input
+              type="radio"
+              name="choice2"
+              value="100%"
+              checked={choiceCuteness === '100%'}
+              onChange={(e) => setChoiceCuteness(e.target.value)}
+              onClick={() => setChoiceCuteness(prev => (prev === '100%' ? '' : '100%'))}
+            />
+          </label>
+        </form>
       </div>
 
       <div className={styles.mySubmit}>
